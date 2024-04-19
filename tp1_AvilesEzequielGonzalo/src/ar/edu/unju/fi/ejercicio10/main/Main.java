@@ -11,9 +11,9 @@ public class Main {
 		
 		for(int i=1; i<=3;i++) {
 			Pizza pizza = new Pizza();
-			System.out.println("Ingrese diametro de pizza (20,30,40): ");
+			System.out.println("Ingrese diametro de pizza 20(pequeña) , 40(mediana) o 60(grande)");
 			int diametro = scanner.nextInt();
-			System.out.println("Quiere ingredientes adicionales? (true o false): ");
+			System.out.println("Quiere ingredientes adicionales True(Si) False (NO)?");
 			boolean ingredientes  = scanner.nextBoolean();
 			
 			pizza.setDiametro(diametro);
@@ -23,9 +23,6 @@ public class Main {
 			System.out.println("** PIZZA "+i+" **");
 			pizza.mostrarAtributos();
 			
-			
-
-
 		}
 
 	}

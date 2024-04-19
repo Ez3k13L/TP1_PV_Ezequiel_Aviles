@@ -10,12 +10,12 @@ public class Main {
 	public static void main(String[] args) {
 		int dia, mes, anio;
 		Scanner scanner = new Scanner(System.in);
-		Persona personaUno = new Persona();
+		Persona p1 = new Persona();
 		
 		System.out.println("Introduzca Nombre: ");
-		personaUno.setNombre(scanner.next());
+		p1.setNombre(scanner.next());
 		System.out.println("Introduzca DNI: ");
-		personaUno.setDni(scanner.nextInt());
+		p1.setDni(scanner.nextInt());
 
 		System.out.println("Introduzca Dia de Nacimiento: ");
 		dia =  scanner.nextInt();
@@ -23,13 +23,13 @@ public class Main {
 		mes = scanner.nextInt();
 		System.out.println("Introduzca año de Nacimiento: ");
 		anio = scanner.nextInt();
-		personaUno.setFechaDeNacimiento(LocalDate.of(anio, mes, dia));
+		p1.setFechaDeNacimiento(LocalDate.of(anio, mes, dia));
 
 		System.out.println("Introduzca Provincia: ");
-		personaUno.setProvincia(scanner.next());
+		p1.setProvincia(scanner.next());
 
 		
-		personaUno.mostrarCampos();
+		p1.mostrarCampos();
 		System.out.println("**********");		
 		System.out.println("SEGUNDA PERSONA");
 		System.out.println("**********");
@@ -45,9 +45,9 @@ public class Main {
 		anio = scanner.nextInt();
 		System.out.println("Provincia: ");
 		String provincia = scanner.next();
-		Persona personaDos =  new Persona(dni, nombre, LocalDate.of(anio, mes, dia), provincia);
+		Persona p2 =  new Persona(dni, nombre, LocalDate.of(anio, mes, dia), provincia);
 		
-		personaDos.mostrarCampos();
+		p2.mostrarCampos();
 		
 		System.out.println("TERCER PERSONA");
 		System.out.println("Nombre: ");
@@ -61,9 +61,9 @@ public class Main {
 		System.out.println("Introduzca año de Nacimiento: ");
 		anio = scanner.nextInt();
 		
-		Persona personaTres = new Persona(dni, nombre, LocalDate.of(anio, mes, dia));
+		Persona p3 = new Persona(dni, nombre, LocalDate.of(anio, mes, dia));
 		
-		personaTres.mostrarCampos();
+		p3.mostrarCampos();
 		
 		scanner.close();
 	}
