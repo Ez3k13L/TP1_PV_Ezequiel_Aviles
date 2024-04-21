@@ -1,84 +1,72 @@
 package ar.edu.unju.fi.ejercicio10.model;
 
 public class Pizza {
-private int diametro;
-private float precio;
-private double area;
-private boolean ingredientesEspeciales;
-
-private static final int INGREDIENTE_ESPECIAL20 = 500;
-private static final int INGREDIENTE_ESPECIAL30 = 750;
-private static final int INGREDIENTE_ESPECIAL40 = 1000;
-
-
-public Pizza() {
-	// TODO Auto-generated constructor stub
-}
-
-public int getDiametro() {
-	return diametro;
-}
-public void setDiametro(int diametro) {
-	this.diametro = diametro;
-}
-public float getPrecio() {
-	return precio;
-}
-public void setPrecio(float precio) {
-	this.precio = precio;
-}
-public double getArea() {
-	return area;
-}
-public void setArea(float area) {
-	this.area = area;
-}
-public boolean isIngredientesEspeciales() {
-	return ingredientesEspeciales;
-}
-public void setIngredientesEspeciales(boolean ingredientesEspeciales) {
-	this.ingredientesEspeciales = ingredientesEspeciales;
-}
-
-public void calcularPrecio() {
+	private Double diametro;
+	private Double precio;
+	private Double area;
+	private Boolean ingredientes;
 	
-	switch(diametro) {
-	case 20:
-		if(ingredientesEspeciales == true) {
-			precio = 4500 + INGREDIENTE_ESPECIAL20;
-		}else {
-			precio = 4500;
-		}
-		break;
-	case 30:
-		if( ingredientesEspeciales == true) {
-			precio = 4800 + INGREDIENTE_ESPECIAL30;
-		}else {
-			precio = 4800;
-		}
-		break;
-	case 40:
-		if(ingredientesEspeciales == true) {
-			precio = 5500 + INGREDIENTE_ESPECIAL40;
-		}else {
-			precio = 5500;
-		}
-		break;
+	private static final Double especiales20 = 500.0;
+	private static final Double especiales30 = 750.0;
+	private static final Double especiales40 = 1000.0;
+	
+	public Pizza() {
+		
 	}
+	public void calcularArea() {
+		this.area = ((diametro/2) * (diametro/2)) * 3.14159265;
+	}
+	
+	public Double getDiametro() {
+		return diametro;
 	}
 
-public double calcularArea() {
-	double radio = diametro/2;
-	area = Math.PI*(Math.pow(radio,2));
+	public void setDiametro(Double diametro) {
+		this.diametro = diametro;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Double getArea() {
+		return area;
+	}
+
+	public void setArea(Double area) {
+		this.area = area;
+	}
+
+	public Boolean getIngredientes() {
+		return ingredientes;
+	}
+
+	public void setIngredientes(Boolean ingredientes) {
+		this.ingredientes = ingredientes;
+	}
+
+	public static Double getEspeciales20() {
+		return especiales20;
+	}
+
+	public static Double getEspeciales30() {
+		return especiales30;
+	}
+
+	public static Double getEspeciales40() {
+		return especiales40;
+	}
+	@Override
+	public String toString() {
+		return "Diametro de la pizza:" + diametro + "\n" +
+				"Precio total: " + precio + "\n" +
+				"Area de la pizza: " + area + "\n" +
+				"Tiene ingredientes especiales? " + ingredientes + "\n";
+	}
 	
-	return area;
-}
-
-public void mostrarAtributos() {
-	System.out.println("Diámetro: "+diametro+"cm");
-	System.out.println("Ingredientes especiales: "+ingredientesEspeciales);
-	System.out.println("Precio pizza: $"+precio);
-	System.out.println("Area de la pizza: "+area+"cm");
-}
-
+	
 }
